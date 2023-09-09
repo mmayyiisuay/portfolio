@@ -1,33 +1,62 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+import layout from './components/layout.vue';
 </script>
 
 <template>
-  <!-- <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div> -->
-  <!-- <HelloWorld msg="Vite + Vue" /> -->
-  <div class="text-red-500 text-4xl">
-    Hello uve
+  <layout/>
+  <div class="image-container w-full">
+    <img src="/src/assets/bg.jpg" class="opacity-20 " />
+    <div class="text-overlay font-mono font-bold w-3/5">
+      <p class="text-5xl">Hello :{{ ')' }}  </p>
+      <div class="flex items-end">
+        <p class="text-2xl mr-4"> My name is</p>
+        <transition name="slide-fade" mode="out-in">
+          <p :key="currentText" class="text-4xl text-purple-700 "> {{currentText}}</p>
+        </transition>
+      </div>
+    </div>
+
   </div>
+  
 </template>
 
+<script>
+  export default {
+  data() {
+    return {
+      texts: ["Natcha Suaysaard", "Mayji", "MJ" , "MorJor",],
+      currentIndex: 0,
+    };
+  },
+  computed: {
+    currentText() {
+      return this.texts[this.currentIndex];
+    },
+  },
+  methods: {
+    changeText() {
+      this.currentIndex = (this.currentIndex + 1) % this.texts.length;
+    },
+  },
+  mounted() {
+    setInterval(this.changeText, 2000);
+  },
+};
+</script>
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 </style>
