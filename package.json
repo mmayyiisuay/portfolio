@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@luxdamore/vue-cursor-fx": "^1.6.2",
+    "vanilla-tilt": "^1.8.1",
     "vue": "^3.3.4"
   },
   "devDependencies": {

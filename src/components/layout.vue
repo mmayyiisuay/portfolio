@@ -8,7 +8,7 @@
             <p class="anytext mr-2">/ &gt; </p>
         </div>
         <div class=" flex justify-center items-center gap-x-2 text-2xl">
-            <v-link to="/" class="text-white"> am </v-link>
+            <v-link to="/" class="text-white">who am i ?</v-link>
         </div>
     </div>
     <slot> </slot>
