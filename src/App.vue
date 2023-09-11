@@ -1,6 +1,8 @@
 <script setup>
 import layout from './components/layout.vue';
+import cardWork from './components/CardWork.vue';
 import VanillaTilt from "vanilla-tilt";
+import { Button } from 'flowbite-vue'
 </script>
 
 <template>
@@ -27,8 +29,8 @@ import VanillaTilt from "vanilla-tilt";
         <div class="parent_box bg-gradient-to-r from-indigo-800 to-purple-700 flex justify-center items-center rounded-full" ref="tiltedElement" >
           <img  src="/src/assets/me.jpg" class="rounded-full " style="width: 200px; height: 200px;"  />
         </div>
-        
       </div>
+      <Button gradient="purple-blue" outline>GET IN TOUCH</Button>
       <div class="flex-col text-end">
         <p class="text-2xl">passionate in</p>
         <transition name="slide-fade" mode="out-in">
@@ -37,6 +39,18 @@ import VanillaTilt from "vanilla-tilt";
       </div>
     </div>
   </div>
+  <div class="flex font-mono ">
+    <div class="border-r-violet-400 border-r-2 w-[200px] h-[600px]"></div>
+    <div class="flex-col w-full">
+      <p class="text-white text-3xl ml-6">WORK</p>
+      <div class="flex justify-around mt-4">
+        
+        <cardWork/>
+      </div>
+    </div>
+    
+  </div>
+  
   
 </template>
 
@@ -136,6 +150,8 @@ import VanillaTilt from "vanilla-tilt";
   height:1.15em;
   transform:rotate(45deg) skewX(22.5deg) skewY(22.5deg);
 }
+
+
 .moving-image {
   position: relative;
   transition: transform 0.3s ease; 
@@ -166,7 +182,5 @@ import VanillaTilt from "vanilla-tilt";
 .parent_box:hover {
   box-shadow: 20px 10px 10px  rgba(122, 55, 255, 0.2);
 }
-
-
 
 </style>

@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@luxdamore/vue-cursor-fx": "^1.6.2",
+    "flowbite": "^1.8.1",
+    "flowbite-vue": "^0.0.17-next.3",
     "vanilla-tilt": "^1.8.1",
     "vue": "^3.3.4"
   },

@@ -1,5 +1,3 @@
-
-
 <template>
     <div class="flex justify-between px-4 font-mono font-bold m-4">
         <div class="flex items-center " >
