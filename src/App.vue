@@ -10,41 +10,56 @@ import { Button } from 'flowbite-vue'
     <div class="cursorin "></div>
   </div>
   <layout/>
-  <div class="image-container w-full ">
+  <div class="image-container w-full">
     <img src="/src/assets/bg.jpg" class="opacity-[15%] "/>
-    <div class="text-overlay font-mono font-bold w-8/12 ">
-      <div class="flex justify-between mb-[100px]">
-        <div class="flex items-center">
+    <div class="text-overlay font-mono font-bold sm:w-8/12 w-10/12  ">
+      <div class="md:flex md:justify-between sm:mb-[100px] mb-[30px]">
+        <div class="flex items-center justify-center">
           <div class="flex-col">
-            <p class="text-5xl">Hello :{{ ')' }}  </p>
-            <div class="flex items-end">
-              <p class="text-2xl mr-4"> My name is</p>
+            <div class="block sm:hidden mt-20 w-full">
+              <div class="flex justify-center" >
+                <div class="mb-2 w-[100px] h-[100px] bg-gradient-to-r from-indigo-800 to-purple-500 flex justify-center items-center rounded-full" ref="tiltedElement" >
+                  <img  src="/src/assets/me.jpg" class="rounded-full " style="width: 80px; height: 80px;"  />
+                </div>
+              </div>
+            </div>
+            <p class="sm:text-5xl text-base">Hello :{{ ')' }}  </p>
+            <div class="flex items-end ">
+              <p class="sm:text-2xl text-xs sm:mr-4 mr-2"> My name is</p>
               <transition name="slide-fade" mode="out-in">
-                <p :key="currentText" class="text-4xl text-purple-700 ">{{currentText}}</p>
+                <p :key="currentText" class="sm:ml-2 ml-4 sm:text-4xl text-base text-purple-700 ">{{currentText}}</p>
               </transition>
             </div>
-            <p >a Computer Engineering student at KMITL.</p>
+            <p class="sm:text-base sm:mt-0 mt-2 text-xs" >a Computer Engineering student at KMITL.</p>
           </div>
         </div>
-        <div class="parent_box bg-gradient-to-r from-indigo-800 to-purple-700 flex justify-center items-center rounded-full" ref="tiltedElement" >
-          <img  src="/src/assets/me.jpg" class="rounded-full " style="width: 200px; height: 200px;"  />
+        <div class="hidden sm:block">
+          <div class=" parent_box bg-gradient-to-r from-indigo-800 to-purple-500 flex justify-center items-center rounded-full" ref="tiltedElement" >
+            <img  src="/src/assets/me.jpg" class="rounded-full " style="width: 200px; height: 200px;"  />
+          </div>
         </div>
       </div>
-      <Button gradient="purple-blue" outline>GET IN TOUCH</Button>
-      <div class="flex-col text-end">
-        <p class="text-2xl">passionate in</p>
-        <transition name="slide-fade" mode="out-in">
-          <p :key="currentPassion" class="text-4xl text-purple-700">{{ currentPassion }}</p>
-        </transition>
+      <div class="flex justify-between">
+        <div class="w-1/3 my-4 ">
+          <Button gradient="purple-blue" outline>
+            <p class="sm:text-lg text-xs" >GET IN TOUCH</p>
+          </Button>
+        </div>
+        <div class="w-2/3 flex-col text-end">
+          <p class="sm:text-2xl text-xs">passionate in</p>
+          <transition name="slide-fade" mode="out-in">
+            <p :key="currentPassion" class="sm:text-4xl text-base text-purple-700">{{ currentPassion }}</p>
+          </transition>
+        </div>
       </div>
     </div>
   </div>
-  <div class="flex font-mono ">
-    <div class="border-r-violet-400 border-r-2 w-[200px] h-[600px]"></div>
+  <div class="flex font-mono sm:mt-0 mt-[100px]">
+    <div class="border-r-violet-400 border-r-2 sm:w-[200px] sm:h-[600px] w-[60px] h-screen"></div>
     <div class="flex-col w-full">
-      <p class="text-white text-3xl ml-6">WORK</p>
-      <div class="flex justify-around mt-4">
-        
+      <p class="text-white sm:text-3xl text-xl ml-6">WORK</p>
+      <div class="sm:flex sm:justify-around sm:mt-4 ml-10 ">
+
         <cardWork/>
       </div>
     </div>
