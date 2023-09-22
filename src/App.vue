@@ -6,6 +6,15 @@ import { Button } from 'flowbite-vue'
 </script>
 
 <template>
+  <div class="text-9xl  text-white flex items-center justify-center h-[100vh] ">
+    <p class="">
+      coming soon jaa
+    </p>
+  </div>
+
+
+<!-- 
+
   <div class="cursor group" id="cursor">
     <div class="cursorin "></div>
   </div>
@@ -62,9 +71,9 @@ import { Button } from 'flowbite-vue'
 
         <cardWork/>
       </div>
-    </div>
+    </div> 
     
-  </div>
+  </div>-->
   
   
 </template>
