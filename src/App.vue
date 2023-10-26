@@ -1,26 +1,18 @@
 <script setup>
 import layout from './components/layout.vue';
-import cardWork from './components/CardWork.vue';
 import VanillaTilt from "vanilla-tilt";
 import { Button } from 'flowbite-vue'
+import CardWork from './components/CardWork.vue';
 </script>
 
 <template>
-  <div class="text-9xl  text-white flex items-center justify-center h-[100vh] ">
-    <p class="">
-      coming soon jaa
-    </p>
-  </div>
-
-
-<!-- 
-
-  <div class="cursor group" id="cursor">
+  <!-- <div class="cursor group" id="cursor">
     <div class="cursorin "></div>
-  </div>
+  </div> -->
   <layout/>
-  <div class="image-container w-full">
-    <img src="/src/assets/bg.jpg" class="opacity-[15%] "/>
+  <div class="image-container w-full h-64 sm:h-auto ">
+    <img src="/src/assets/bg.jpg" class="opacity-[15%] sm:block hidden" alt="Image" />
+    <img src="/src/assets/bg2.png" class="opacity-[15%] sm:hidden block" alt="Image" style="width: 100%; height: 350px;"/>
     <div class="text-overlay font-mono font-bold sm:w-8/12 w-10/12  ">
       <div class="md:flex md:justify-between sm:mb-[100px] mb-[30px]">
         <div class="flex items-center justify-center">
@@ -32,11 +24,11 @@ import { Button } from 'flowbite-vue'
                 </div>
               </div>
             </div>
-            <p class="sm:text-5xl text-base">Hello :{{ ')' }}  </p>
+            <p class="sm:text-5xl text-base mb-4">Hello :{{ ')' }}  </p>
             <div class="flex items-end ">
               <p class="sm:text-2xl text-xs sm:mr-4 mr-2"> My name is</p>
               <transition name="slide-fade" mode="out-in">
-                <p :key="currentText" class="sm:ml-2 ml-4 sm:text-4xl text-base text-purple-700 ">{{currentText}}</p>
+                <p :key="currentText" class="sm:ml-2 ml-4 sm:text-4xl text-xs text-purple-700 ">{{currentText}}</p>
               </transition>
             </div>
             <p class="sm:text-base sm:mt-0 mt-2 text-xs" >a Computer Engineering student at KMITL.</p>
@@ -48,12 +40,13 @@ import { Button } from 'flowbite-vue'
           </div>
         </div>
       </div>
-      <div class="flex justify-between">
-        <div class="w-1/3 my-4 ">
-          <Button gradient="purple-blue" outline>
-            <p class="sm:text-lg text-xs" >GET IN TOUCH</p>
+      <div class="flex justify-between items-start">
+        <div class="w-1/3  ">
+          <Button gradient="purple-blue" outline @click="togglePopup">
+            <p class="sm:text-lg sm:py-4 text-[8px]" >GET IN TOUCH</p>
           </Button>
         </div>
+        
         <div class="w-2/3 flex-col text-end">
           <p class="sm:text-2xl text-xs">passionate in</p>
           <transition name="slide-fade" mode="out-in">
@@ -69,29 +62,86 @@ import { Button } from 'flowbite-vue'
       <p class="text-white sm:text-3xl text-xl ml-6">WORK</p>
       <div class="sm:flex sm:justify-around sm:mt-4 ml-10 ">
 
-        <cardWork/>
+        <CardWork/>
       </div>
     </div> 
     
-  </div>-->
+    
+  </div>
+  <div v-if="showPopup" class="z-20 h-screen w-full fixed left-0 top-0 bg-gradient-to-t from-indigo-900  bg-opacity-10 flex justify-center items-center" >
+    <div class="flex justify-center z-50  h-[60%] sm:w-[60%] w-[80%] rounded-3xl bg-black">
+      <div class="sm:flex sm:items-center sm:justify-between sm:w-[80%] ">
+        <p class="sm:items-start sm:text-[40px] text-[20px] font-extrabold text-purple-300">Get in touch!</p>
+        <form ref="form" @submit.prevent="sendEmail" action="" class="mt-2 sm:w-[50%] ">
+          <input
+            type="text"
+            name="name"
+            class="focus:outline-none mt-6 block w-full px-2 py-2 bg-white border border-l-purple-400 border-t-purple-800 rounded-md text-sm shadow-sm placeholder-slate-400 font-normal"
+            placeholder="Name"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            class="focus:outline-none mt-6 block w-full px-2 py-2 bg-white border border-l-purple-400 border-t-purple-800 rounded-md text-sm shadow-sm placeholder-slate-400 font-normal"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="text"
+            name="subject"
+            class="focus:outline-none mt-6 block w-full px-2 py-2 bg-white border border-l-purple-400 border-t-purple-800 rounded-md text-sm shadow-sm placeholder-slate-400 font-normal"
+            placeholder="Subject"
+            required
+          />
+          <textarea
+              type="text"
+              name="message"
+              class="focus:outline-none block w-full h-[100px] mt-6 px-2 py-2 bg-white border border-l-purple-400 border-t-purple-800 rounded-md shadow-sm placeholder-slate-400"
+              placeholder="Your message"
+          />
+          <div class=" flex justify-end mt-6 ">
+            <Button
+              type="submit"
+              value="Send"
+              gradient="purple-blue" 
+              class="sm:text-lg sm:py-4 text-[8px] text-pink-100 hover:scale-105"
+            >
+              Send
+            </Button>
+          </div>
+          
+          
+          <div v-if="showAlert" class="mt-4" :class="showAlert === 'Email sent successfully!' ? 'text-green-600' : 'text-red-600'">
+            {{ showAlert  }}
+          </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  
   
   
 </template>
 
 <script>
-  var cursor = document.getElementById("cursor");
-    document.body.addEventListener("mousemove", function(e) {
-      cursor.style.left = e.clientX + "px",
-      cursor.style.top = e.clientY + "px";
-    });
+  
+  // var cursor = document.getElementById("cursor");
+  //   document.body.addEventListener("mousemove", function(e) {
+  //     cursor.style.left = e.clientX + "px",
+  //     cursor.style.top = e.clientY + "px";
+  //   });
     
   export default {
   data() {
     return {
+      showPopup : false,
       texts: ["Natcha Suaysaard", "Mayji", "MJ" , "MorJor",],
       currentIndex: 0,
       passions: ["Front-end development", "UX UI design", "Sleep"],
       currentPassionIndex: 0,
+      screenWidth: window.innerWidth,
     };
   },
   computed: {
@@ -101,6 +151,7 @@ import { Button } from 'flowbite-vue'
     currentPassion() {
       return this.passions[this.currentPassionIndex];
     },
+    
   },
   methods: {
     changeText() {
@@ -109,7 +160,14 @@ import { Button } from 'flowbite-vue'
     changePassion() {
       this.currentPassionIndex = (this.currentPassionIndex + 1) % this.passions.length;
     },
+    togglePopup() {
+      this.showPopup = !this.showPopup;
+      console.log(this.showPopup);
+      
+    },
+    
   },
+
   mounted() {
     setInterval(this.changeText, 2000);
     setInterval(this.changePassion, 2000);
@@ -127,7 +185,7 @@ import { Button } from 'flowbite-vue'
   cursor: none;
 } */
 
-.cursor {
+/* .cursor {
   position: fixed;
   border-radius: 50%;
   transform: translateX(-50%) translateY(-50%);
@@ -173,7 +231,7 @@ import { Button } from 'flowbite-vue'
   width:1em;
   height:1.15em;
   transform:rotate(45deg) skewX(22.5deg) skewY(22.5deg);
-}
+} */
 
 
 .moving-image {
