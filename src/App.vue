@@ -9,7 +9,7 @@ import CardWork from './components/CardWork.vue';
   <!-- <div class="cursor group" id="cursor">
     <div class="cursorin "></div>
   </div> -->
-  <layout/>
+  <!-- <layout/>
   <div class="image-container w-full h-64 sm:h-auto ">
     <img src="/src/assets/bg.jpg" class="opacity-[15%] sm:block hidden" alt="Image" />
     <img src="/src/assets/bg2.png" class="opacity-[15%] sm:hidden block" alt="Image" style="width: 100%; height: 350px;"/>
@@ -120,7 +120,10 @@ import CardWork from './components/CardWork.vue';
       
     </div>
   </div>
-  
+   -->
+   <div class="text-6xl text-white bg-black w-full h-[100vh] flex items-center justify-center">
+    ⚠️"Closed for maintenance."⚠️
+   </div>
   
   
 </template>
