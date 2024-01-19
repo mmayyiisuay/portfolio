@@ -59,7 +59,7 @@ function handleScroll() {
             to="/"
             class="text-xl font-bold  md:text-xl lg:ml-10 sub"
             :style="{ color: navbarTextColor }"
-            >&lt; Natcha / &gt;
+            >&lt; Natcha ja / &gt;
             </div>
             <div @click="toggleNav" class="md:hidden">
             <button ref="btn" class="btn not-active">
