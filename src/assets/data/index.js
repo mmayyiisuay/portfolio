@@ -1,2 +1,2 @@
-import worksData from './work.JSON'
+import worksData from './work.json'
 export { worksData } ;
