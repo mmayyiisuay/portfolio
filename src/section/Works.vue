@@ -136,7 +136,7 @@ const works = ref(worksData.worksData);
     </div> -->
 
     <div v-for="project in works" :key="project.name">
-    <div class="w-full h-full flex flex-col items-center mt-10">
+    <div class="w-full h-full flex flex-col items-center mt-10 mb-20">
         <div class="bg-sky-100 w-[70%] h-fit rounded-[6vw] flex flex-col md:flex-row items-center md:p-8 py-8 px-10 bg-css">
 
             <img :src="getProjectImage(project.src)" alt="" class="w-[80%]  md:w-[40%] rounded-[2vw] md:ml-10" />
