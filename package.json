@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "newportfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,17 +9,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@luxdamore/vue-cursor-fx": "^1.6.2",
-    "flowbite": "^1.8.1",
-    "flowbite-vue": "^0.0.17-next.3",
-    "vanilla-tilt": "^1.8.1",
-    "vue": "^3.3.4"
+    "autoprefixer": "^10.4.16",
+    "flowbite": "^2.2.1",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "typed.js": "^2.1.0",
+    "vue": "^3.3.11",
+    "vue-typed-js": "^0.1.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.2.3",
-    "autoprefixer": "^10.4.15",
-    "postcss": "^8.4.29",
-    "tailwindcss": "^3.3.3",
-    "vite": "^4.4.5"
-  }
+    "@vitejs/plugin-vue": "^4.5.2",
+    "vite": "^5.0.8"
+  },
+  "main": "index.js",
+  "license": "MIT"
 }
