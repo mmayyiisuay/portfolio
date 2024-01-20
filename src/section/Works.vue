@@ -45,32 +45,30 @@ onMounted(() => {
 
 
 function getProjectImage(src) {
-  // Map your src to the corresponding imported image
-  switch (src) {
-    case '../works/feedmyfriend.png':
-      return feedmyfriend;
-    case '../works/cenextgen.png':
-      return cenextgen;
-    case '../works/pana.png':
-      return pana;
-    case '../works/pasaloo.png':
-      return pasaloo;
-    case '../works/pha.png':
-      return pha;
-    case '../works/potato.png':
-      return potato;
-    case './securefirst.png':
-      return securefirst;
-    // Add more cases for other images
-    default:
-      return '';
-  }
+    switch (src) {
+        case '../works/feedmyfriend.png':
+        return feedmyfriend;
+        case '../works/cenextgen.png':
+        return cenextgen;
+        case '../works/pana.png':
+        return pana;
+        case '../works/pasaloo.png':
+        return pasaloo;
+        case '../works/pha.png':
+        return pha;
+        case '../works/potato.png':
+        return potato;
+        case './securefirst.png':
+        return securefirst;
+        default:
+        return '';
+    }
 }
 const works = ref(worksData.worksData);
 </script>
 <template>
     <div class="flex z-0 justify-around" id="Works">
-        <div class="wrap w-[40vw] text-[40px] sm:text-[30px] md:text-[36px] text-ssm mt-10 ml-[10px]">
+        <div class="wrap w-[40vw] text-[40px] sm:text-[30px] md:text-[36px] text-ssm my-10 ml-[10px]">
             <div class="w-[100vw] font-bold uppercase ">
                 <div class="text-blue-400 overflow-hidden inline-block w-[10vw]">
                     <div class="left-content">
@@ -107,7 +105,7 @@ const works = ref(worksData.worksData);
             </div>
             
         </div>
-        <div class="flex flex-col w-[40%] mr-10  mt-6 ">
+        <div class="flex flex-col w-[40%] mr-10  my-6 ">
             <div class="flex justify-between">
                 <img :src="css" alt="css" class="icon-size"/>
                 <img :src="html" alt="html" class="icon-size"/>
@@ -134,55 +132,59 @@ const works = ref(worksData.worksData);
         </div>
 
     </div> -->
-
-    <div v-for="project in works" :key="project.name">
-    <div class="w-full h-full flex flex-col items-center mt-10">
-        <div class="bg-sky-100 w-[70%] h-fit rounded-[6vw] flex flex-col md:flex-row items-center md:p-8 py-8 px-10 bg-css">
-
-            <img :src="getProjectImage(project.src)" alt="" class="w-[80%]  md:w-[40%] rounded-[2vw] md:ml-10" />
-
-            <div class="ml-0 md:ml-10 mr-0 md:mr-2 flex flex-col items-start md:w-[60%] ">
-                <div class="flex justify-between w-full md:pr-20 mt-10 md:mt-0 mb-4 w-role">
-                    <div class="">
-                        {{ project.date }}
+    <div class="grid grid-crad md:grid-cols-2 lg:grid-cols-3 md:gap-x-4 gap-y-4 py-10 md:px-28 bg-gradient-to-tr from-[#4F53B9] to-[#ACD8F8]">
+        <div v-for="project in works" :key="project.name" class="flex justify-center">
+            <div class="bg-sky-100 w-[70%] md:w-full h-full rounded-[3vw] flex flex-col items-center  py-8 p-4 bg-css  shadow-box ">
+    
+                <img :src="getProjectImage(project.src)" alt="" class="h-[35%]  rounded-[2vw] " />
+                
+                <div class="h-full flex flex-col items-start text-[14px]">
+                    <div class="flex justify-between w-full  mt-10  mb-4 w-role">
+                        <div class="">
+                            <div>
+                                {{ project.date }}
+                            </div>
+                            <div>
+                                {{ project.type }}
+                            </div>
+                        </div>
+                        <div class="sm:flex justify-end text-center  ">
+                            <div v-for="role in project.role" class="text-role"  :key="role">
+                                <div class="border border-indigo-500 text-indigo-500 px-2 rounded-lg mx-2">
+                                    {{ role }}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="sm:flex justify-end text-center  ">
-                        <div v-for="role in project.role" class="text-role"  :key="role">
-                            <div class="border border-indigo-500 text-indigo-500 px-2 rounded-lg mx-2">
-                                {{ role }}
+                    <div class="h-2/3">
+                        <p class="text-ssm text-[20px] font-semibold ">
+                            {{ project.name }}
+                        </p>
+                        <li v-for="detail in project.details" :key="detail" class="ml-4">
+                            {{ detail }}
+                        </li>
+                        
+                    </div>
+                    <div class="flex gap-x-2 ">
+                        <div v-for="tool in project.tools" class="" :key="tool">
+                            <div class=" bg-indigo-500 px-2 rounded-lg text-white whitespace-no-wrap overflow-hidden truncate">
+                                {{ tool }}
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-full">
-                    <p class="text-ssm text-[28px] sm:text-[36px] md:text-[36px] font-semibold">
-                        {{ project.name }}
-                    </p>
-                    <li v-for="detail in project.details" :key="detail" class="ml-4">
-                        {{ detail }}
-                    </li>
-                    
-                </div>
-                <div class="mt-10 flex gap-x-2 ">
-                    <div v-for="tool in project.tools" class="" :key="tool">
-                        <div class="border bg-indigo-500 px-2 rounded-lg text-white whitespace-no-wrap overflow-hidden truncate">
-                            {{ tool }}
-                        </div>
-                    </div>
-                </div>
+    
             </div>
-
         </div>
     </div>
-</div>
 
     
     
 </template>
 <style scope>
-.tool-box{
-
-}
+.shadow-box{
+        box-shadow: 0px 50px 102.4px 0px rgba(255, 255, 255, 0.45);
+    }
 .icon-size {
     width: 50px;
     height: 50px;
@@ -223,21 +225,22 @@ span {
         height: 30px;
         }
     }
-@media (max-width: 384px) {
+@media (max-width: 450px) {
     .icon-size{
         display: none;
         }
-    .bg-css{
-        width: 90%;
-    }
+    
     }
 
 @media (max-width: 460px) {
     .text-ssm {
-        font-size: 20px; /* Default font size for .text-ssm */
+        font-size: 20px; 
     }
     .text-role {
         font-size: 12px;
+    }
+    .bg-css{
+        width: 90%;
     }
 
     
@@ -255,7 +258,13 @@ span {
         padding-right: 0;
     
     }
+    .grid-crad {
+        grid-column: 2;
+        padding: 6%;
+    }
+}
 
+@media (max-width: 765px) and (min-width: 630px) {
     
 }
 
