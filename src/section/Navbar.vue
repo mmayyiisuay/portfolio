@@ -7,45 +7,45 @@ let btn = null;
 const navbarTextColor = ref('white');
 
 const toggleNav = () => {
-  showMenu.value = !showMenu.value;
-  btnActive();
+    showMenu.value = !showMenu.value;
+    btnActive();
 };
 
 const btnActive = () => {
-  if (btn) {
-    btn.classList.toggle("active", isBtnClicked.value);
-    btn.classList.toggle("not-active", !isBtnClicked.value);
-    isBtnClicked.value = !isBtnClicked.value;
-  }
+    if (btn) {
+        btn.classList.toggle("active", isBtnClicked.value);
+        btn.classList.toggle("not-active", !isBtnClicked.value);
+        isBtnClicked.value = !isBtnClicked.value;
+    }
 };
 
 onMounted(() => {
-  btn = document.querySelector(".btn");
-  btnActive();
+    btn = document.querySelector(".btn");
+    btnActive();
 
-  window.addEventListener('scroll', handleScroll);
-  const scrollContainer = ref('scrollContainer');
+    window.addEventListener('scroll', handleScroll);
+    const scrollContainer = ref('scrollContainer');
 
-  if (scrollContainer.value) {
-    scrollContainer.value.addEventListener('scroll', handleScroll);
-  }
+    if (scrollContainer.value) {
+        scrollContainer.value.addEventListener('scroll', handleScroll);
+    }
 
 });
 function handleScroll() {
-  const scroll = window.scrollY;
+    const scroll = window.scrollY;
 
-  if (scroll > 400) {
-    navbarTextColor.value = 'blue';
-  } else {
-    navbarTextColor.value = 'white';
-  }
+    if (scroll > 400) {
+        navbarTextColor.value = 'blue';
+    } else {
+        navbarTextColor.value = 'white';
+    }
 }
 </script>
 
 
 
 <template>
-    <div class="sticky top-0 z-50 " @scroll="handleScroll" >
+    <div class="sticky top-0 z-50 ≈" @scroll="handleScroll" >
         <div
         class="absolute w-full flex justify-center backdrop-blur-md "
         
@@ -72,7 +72,7 @@ function handleScroll() {
         <div>
             <div
             :class="showMenu ? 'flex' : 'hidden '"
-            class="flex-col mt-8 md:mr-10 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 z-60 pl-[10%] md:pl-0" 
+            class="flex-col mt-8 md:mr-10 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 z-60 pl-[10%] md:pl-0 z-70" 
             >
             <a @click="toggleNav" href="#About" class=" hover:text-indigo-400" :style="{ color: navbarTextColor }">
                 About

@@ -1,29 +1,44 @@
 {
     "worksData": [
     {
-        "name": "PotatoCovidTracker",
-        "type": "University Projects",
-        "role": ["UXUI"],
-        "date": "May, 2022",
-        "tools": ["figma"],
+        "name": "PaNan (LIFF)",
+        "type": "Freelance Projects",
+        "role": ["UXUI", "Front-end"],
+        "date": "Nov, 2023",
+        "tools": ["figma", "React TS", "Tailwind"],
         "details": [
-        "A website related to tracking details of COVID events (various dashboards).",
-        "Assigned responsibilities for designing the web pages and logo.",
-        "First experience with using Figma."
+            "A website on the Line Frontend Framework (LIFF) that serves as a form for users to check if they are involved in gambling activities or not.",
+            "Additionally, it provides informational content and news."
         ],
-        "src":"../works/potato.png"
+        "src":"../works/pana.png",
+        "linkweb":"",
+        "linkdesign":"https://www.figma.com/file/ilx9AMmNGfKEScbg5f8WvZ/Panan?type=design&node-id=0%3A1&mode=design&t=0XhrmRovV1dKdTPC-1"
     },
     {
-        "name": "FEED MY FRIEND",
-        "type": "University Projects",
-        "role": ["UXUI", "Front-end"],
-        "date": "May, 2023",
-        "tools": ["figma", "React JS", "Tailwind"],
+        "name": "CE Next Gen Web",
+        "role": ["UXUI"],
+        "type": "CE Projects",
+        "date": "Oct, 2023",
+        "tools": ["figma"],
         "details": [
-        "A website for arranging shared purchases of meals from the cafeteria, where users can be both depositors and buyers.",
-        "Responsive, supporting usage through mobile devices."
+            "Designing a website for the CE Next Gen#1 camp at KMITL to be used for recruitment and announcing camp activities."
         ],
-        "src":"../works/feedmyfriend.png"
+        "src":"../works/cenextgen.png",
+        "linkweb":"",
+        "linkdesign":"https://www.figma.com/file/IRcBWSa9WFJHevgXKoQLD0/CENextGen%231?type=design&node-id=0%3A1&mode=design&t=P8gzCB0yyHMpuVXY-1"
+    },
+    {
+        "name": "Securefirst 2023 Web",
+        "type": "Lab Projects",
+        "role": ["UXUI", "Front-end"],
+        "date": "Sep, 2023",
+        "tools": ["figma", "React TS", "Tailwind"],
+        "details": [
+            "A website for Securefirst 2023, organized by the Information Security Advisory Group. This website is dedicated to Capture The Flag (CTF) challenges and for member registration."
+        ],
+        "src":"./securefirst.png",
+        "linkweb":"",
+        "linkdesign":"https://www.figma.com/file/ZbYPVnX3PjQoF7w5u6vNSl/ISAG?type=design&node-id=5%3A40&mode=design&t=4yjXg2XpZhsnJwG1-1"
     },
     {
         "name": "Pha Mue Song Hor Jai",
@@ -35,7 +50,23 @@
         "A second-hand clothing buying and selling website, where users can both list items for sale and make purchases through a chat feature.",
         "Responsive, supporting usage through mobile devices."
         ],
-        "src":"../works/pha.png"
+        "src":"../works/pha.png",
+        "linkweb":"https://github.com/Sagalama-Sagala/parkeyrew-frontend",
+        "linkdesign":"https://www.figma.com/file/vbpfKndT6JiAVWiDKEHz3Q/%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B5%E0%B9%89%E0%B8%A3%E0%B8%B7%E0%B9%89%E0%B8%A7%E0%B8%AB%E0%B9%88%E0%B8%AD%E0%B8%97%E0%B8%AD%E0%B8%87-%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%AD%E0%B8%87%E0%B8%AB%E0%B9%88%E0%B8%AD%E0%B9%83%E0%B8%88?type=design&node-id=0%3A1&mode=design&t=6DUnfdhoXRpfmY8Z-1"
+    },
+    {
+        "name": "FEED MY FRIEND",
+        "type": "University Projects",
+        "role": ["UXUI", "Front-end"],
+        "date": "May, 2023",
+        "tools": ["figma", "React JS", "Tailwind"],
+        "details": [
+            "A website for arranging shared purchases of meals from the cafeteria, where users can be both depositors and buyers.",
+            "Responsive, supporting usage through mobile devices."
+        ],
+        "src":"../works/feedmyfriend.png",
+        "linkweb":"",
+        "linkdesign":"https://www.figma.com/file/vbpfKndT6JiAVWiDKEHz3Q/%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B5%E0%B9%89%E0%B8%A3%E0%B8%B7%E0%B9%89%E0%B8%A7%E0%B8%AB%E0%B9%88%E0%B8%AD%E0%B8%97%E0%B8%AD%E0%B8%87-%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%AD%E0%B8%87%E0%B8%AB%E0%B9%88%E0%B8%AD%E0%B9%83%E0%B8%88?type=design&node-id=0%3A1&mode=design&t=6DUnfdhoXRpfmY8Z-1"
     },
     {
         "name": "Pasaloo",
@@ -44,44 +75,27 @@
         "date": "Oct, 2023",
         "tools": ["figma", "vue", "Tailwind"],
         "details": [
-        "A website for language translation ( แปลภาษาลู )",
-        "Responsive, supporting usage through mobile devices."
+            "A website for language translation ( แปลภาษาลู )",
+            "Responsive, supporting usage through mobile devices."
         ],
-        "src":"../works/pasaloo.png"
+        "src":"../works/pasaloo.png",
+        "linkweb":"",
+        "linkdesign":"https://www.figma.com/file/bSXcQGeZJEF07p7AGf4Ar6/TOC?type=design&node-id=8%3A41&mode=design&t=Fm5MhtT5k7rAHW5C-1"
     },
     {
-        "name": "Securefirst 2023 Web",
-        "type": "Another Projects",
-        "role": ["UXUI", "Front-end"],
-        "date": "Sep, 2023",
-        "tools": ["figma", "React TS", "Tailwind"],
-        "details": [
-        "A website for Securefirst 2023, organized by the Information Security Advisory Group. This website is dedicated to Capture The Flag (CTF) challenges and for member registration."
-        ],
-        "src":"./securefirst.png"
-    },
-    {
-        "name": "CE Next Gen Web",
+        "name": "PotatoCovidTracker",
+        "type": "University Projects",
         "role": ["UXUI"],
-        "type": "Another Projects",
-        "date": "Oct, 2023",
+        "date": "May, 2022",
         "tools": ["figma"],
         "details": [
-        "Designing a website for the CE Next Gen#1 camp at KMITL to be used for recruitment and announcing camp activities."
+        "A website related to tracking details of COVID events (various dashboards).",
+        "Assigned responsibilities for designing the web pages and logo.",
+        "First experience with using Figma."
         ],
-        "src":"../works/cenextgen.png"
-    },
-    {
-        "name": "PaNan (LIFF)",
-        "type": "Another Projects",
-        "role": ["UXUI", "Front-end"],
-        "date": "Nov, 2023",
-        "tools": ["figma", "React TS", "Tailwind"],
-        "details": [
-        "A website on the Line Frontend Framework (LIFF) that serves as a form for users to check if they are involved in gambling activities or not.",
-        "Additionally, it provides informational content and news."
-        ],
-        "src":"../works/pana.png"
+        "src":"../works/potato.png",
+        "linkweb":"none",
+        "linkdesign":"https://www.figma.com/file/pujgbkN8ejVQgWbxVkfMpd/PotatoCovidTracker?type=design&node-id=0%3A1&mode=design&t=N13YnrJOzDpeue45-1"
     }
-    ]
+]
 }
