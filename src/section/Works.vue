@@ -2,13 +2,16 @@
 import { onMounted, onBeforeUnmount, ref } from 'vue';
 import {css,html,figma,illustrator,javascript,python,tailwind,vue,react,feedmyfriend, cenextgen, pana, pasaloo, securefirst, pha, potato} from '../assets/index'
 import { worksData } from '../assets/data/index';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 
 const spansSlow = ref([]);
 const spansFast = ref([]);
 const navbarTextColor = ref('white');
 let width = ref(window.innerWidth);
+
+document.documentElement.classList.add('js');
 
 function handleMouseMove(e) {
     const normalizedPosition = e.pageX / (width.value / 2) - 1;
@@ -41,6 +44,31 @@ onMounted(() => {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', handleWindowResize);
     window.addEventListener('scroll', handleScroll);
+
+    AOS.init({
+        // Global settings:
+        disable: false,
+        startEvent: 'DOMContentLoaded',
+        initClassName: 'aos-init',
+        animatedClassName: 'aos-animate',
+        useClassNames: false,
+        disableMutationObserver: false,
+        debounceDelay: 50,
+        throttleDelay: 99,
+
+        offset: 120,
+        delay: 0,
+        duration: 400,
+        easing: 'ease',
+        once: false,
+        mirror: false,
+        anchorPlacement: 'top-bottom',
+    });
+});
+
+onBeforeUnmount(() => {
+    // Cleanup AOS when the component is unmounted
+    AOS.destroy();
 });
 
 
@@ -66,6 +94,8 @@ function getProjectImage(src) {
 }
 const works = ref(worksData.worksData);
 </script>
+
+
 <template>
     <div class="flex z-0 justify-around" id="Works">
         <div class="wrap w-[40vw] text-[40px] sm:text-[30px] md:text-[36px] text-ssm my-10 ml-[10px]">
@@ -105,7 +135,8 @@ const works = ref(worksData.worksData);
             </div>
             
         </div>
-        <div class="flex flex-col w-[40%] mr-10  my-6 ">
+        <div class="flex flex-col w-[40%] mr-10  my-6 " data-aos="fade-left">
+            
             <div class="flex justify-between">
                 <img :src="css" alt="css" class="icon-size"/>
                 <img :src="html" alt="html" class="icon-size"/>
@@ -123,6 +154,7 @@ const works = ref(worksData.worksData);
         </div>
         
     </div>
+    
     <!-- <div>
         <div v-if="works.length > 0" class=" mt-2">
             <div v-for="i in 3" :key="i" class="mt-2 bg-orange-100">
@@ -133,8 +165,9 @@ const works = ref(worksData.worksData);
 
     </div> -->
     <div class="grid grid-crad md:grid-cols-2 lg:grid-cols-3 md:gap-x-4 gap-y-4 py-10 md:px-28 bg-gradient-to-tr from-[#4F53B9] to-[#ACD8F8]">
-        <div v-for="project in works" :key="project.name" class="flex justify-center">
-            <div class="bg-sky-100 w-[70%] md:w-full h-full rounded-[3vw] flex flex-col items-center  py-8 p-4 bg-css  shadow-box ">
+        <div v-for="project in works" :key="project.name" class="flex justify-center ">
+
+            <div  class="bg-sky-100 w-[70%] md:w-full h-full rounded-[3vw] flex flex-col items-center  py-8 p-4 bg-css  shadow-box ">
     
                 <img :src="getProjectImage(project.src)" alt="" class="h-[35%]  rounded-[2vw] " />
                 
@@ -177,6 +210,8 @@ const works = ref(worksData.worksData);
             </div>
         </div>
     </div>
+
+    
 
     
     
