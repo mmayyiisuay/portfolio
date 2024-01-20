@@ -9,12 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "aos": "^3.0.0-beta.6",
     "autoprefixer": "^10.4.16",
     "flowbite": "^2.2.1",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.4.0",
-    "taos": "^1.0.5",
     "typed.js": "^2.1.0",
     "vue": "^3.3.11",
     "vue-typed-js": "^0.1.2"
