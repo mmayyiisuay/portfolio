@@ -4,11 +4,11 @@ import {css,html,figma,illustrator,javascript,python,tailwind,vue,react,feedmyfr
 import { worksData } from '../assets/data/index';
 import Tilt from '../assets/components/TiltComponent.vue';
 
+
 const spansSlow = ref([]);
 const spansFast = ref([]);
 const navbarTextColor = ref('white');
 let width = ref(window.innerWidth);
-
 
 document.documentElement.classList.add('js');
 
@@ -43,10 +43,8 @@ onMounted(() => {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', handleWindowResize);
     window.addEventListener('scroll', handleScroll);
-    
-   
-});
 
+});
 
 
 function getProjectImage(src) {
@@ -71,8 +69,6 @@ function getProjectImage(src) {
 }
 const works = ref(worksData.worksData);
 </script>
-
-
 <template>
     <div class="flex z-0 justify-around mt-10" id="Works">
         <div class="wrap w-[40vw] text-[40px] sm:text-[30px] md:text-[36px] text-ssm my-10 ml-[10px]">
@@ -116,6 +112,7 @@ const works = ref(worksData.worksData);
             
             <div v-motion-slide-visible-right class="flex justify-between ">
                 <img :src="css" alt="css" class="icon-size "/>
+
                 <img :src="html" alt="html" class="icon-size"/>
                 <img :src="javascript" alt="javascript" class="icon-size"/>
             </div>
@@ -172,6 +169,7 @@ const works = ref(worksData.worksData);
                                 <div>
                                     {{ project.type }}
                                 </div>
+
                             </div>
                             <div class="sm:flex justify-end text-center  ">
                                 <div v-for="role in project.role" class="text-role"  :key="role">
@@ -204,8 +202,6 @@ const works = ref(worksData.worksData);
         </div>
     </div>
     
-    
-
     
     
 </template>
