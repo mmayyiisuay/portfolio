@@ -7,15 +7,6 @@ let btn = null;
 const navbarTextColor = ref('white');
 const scrollContainer = ref(null);
 
-const handleScroll = () => {
-  const scroll = window.scrollY;
-  if (scroll > 400 && scroll <2500) {
-    navbarTextColor.value = 'blue';
-  } else {
-    navbarTextColor.value = 'white';
-  }
-};
-
 const toggleNav = () => {
   showMenu.value = !showMenu.value;
   btnActive();
@@ -29,23 +20,37 @@ const btnActive = () => {
   }
 };
 
+const handleScroll = () => {
+  const scroll = window.scrollY;
+
+  if (scroll > 400) {
+    navbarTextColor.value = 'blue';
+  } else {
+    navbarTextColor.value = 'white';
+  }
+};
+
 onMounted(() => {
   btn = document.querySelector('.btn');
   btnActive();
 
-  window.addEventListener('scroll', handleScroll);
+  const handleScrollEvent = () => handleScroll();
+
+  window.addEventListener('scroll', handleScrollEvent);
 
   if (scrollContainer.value) {
-    scrollContainer.value.addEventListener('scroll', handleScroll);
+    scrollContainer.value.addEventListener('scroll', handleScrollEvent);
   }
 });
 
 onUnmounted(() => {
   if (scrollContainer.value) {
-    scrollContainer.value.removeEventListener('scroll', handleScroll);
+    const handleScrollEvent = () => handleScroll();
+    scrollContainer.value.removeEventListener('scroll', handleScrollEvent);
   }
 });
 </script>
+
 
 
 
