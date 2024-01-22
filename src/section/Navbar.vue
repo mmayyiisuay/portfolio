@@ -1,46 +1,54 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from 'vue';
 
-let showMenu = ref(false);
-let isBtnClicked = ref(false);
+const showMenu = ref(false);
+const isBtnClicked = ref(false);
 let btn = null;
 const navbarTextColor = ref('white');
+const scrollContainer = ref(null);
+
+const handleScroll = () => {
+  const scroll = window.scrollY;
+  if (scroll > 400 && scroll <2500) {
+    navbarTextColor.value = 'blue';
+  } else {
+    navbarTextColor.value = 'white';
+  }
+};
 
 const toggleNav = () => {
-    showMenu.value = !showMenu.value;
-    btnActive();
+  showMenu.value = !showMenu.value;
+  btnActive();
 };
 
 const btnActive = () => {
-    if (btn) {
-        btn.classList.toggle("active", isBtnClicked.value);
-        btn.classList.toggle("not-active", !isBtnClicked.value);
-        isBtnClicked.value = !isBtnClicked.value;
-    }
+  if (btn) {
+    btn.classList.toggle('active', isBtnClicked.value);
+    btn.classList.toggle('not-active', !isBtnClicked.value);
+    isBtnClicked.value = !isBtnClicked.value;
+  }
 };
 
 onMounted(() => {
-    btn = document.querySelector(".btn");
-    btnActive();
+  btn = document.querySelector('.btn');
+  btnActive();
 
-    window.addEventListener('scroll', handleScroll);
-    const scrollContainer = ref('scrollContainer');
+  window.addEventListener('scroll', handleScroll);
 
-    if (scrollContainer.value) {
-        scrollContainer.value.addEventListener('scroll', handleScroll);
-    }
-
+  if (scrollContainer.value) {
+    scrollContainer.value.addEventListener('scroll', handleScroll);
+  }
 });
-function handleScroll() {
-    const scroll = window.scrollY;
 
-    if (scroll > 400) {
-        navbarTextColor.value = 'blue';
-    } else {
-        navbarTextColor.value = 'white';
-    }
-}
+onUnmounted(() => {
+  if (scrollContainer.value) {
+    scrollContainer.value.removeEventListener('scroll', handleScroll);
+  }
+});
 </script>
+
+
+
 
 
 
@@ -57,28 +65,28 @@ function handleScroll() {
             to="/"
             class="text-xl font-bold  md:text-xl lg:ml-10 sub"
             :style="{ color: navbarTextColor }"
-            >&lt; Natcha kub/ &gt;
+            >&lt; Natcha /&gt;
             </div>
             <div @click="toggleNav" class="md:hidden">
-            <button ref="btn" class="btn not-active">
-                <span  :style="{ background: navbarTextColor }"></span>
-                <span  :style="{ background: navbarTextColor }"></span>
-                <span  :style="{ background: navbarTextColor }"></span>
+            <button ref="btn" class="btn not-active " >
+                <span :style="{ background: navbarTextColor }"></span>
+                <span :style="{ background: navbarTextColor }"></span>
+                <span :style="{ background: navbarTextColor }"></span>
             </button>
             </div>
         </div>
         <div>
             <div
             :class="showMenu ? 'flex' : 'hidden '"
-            class="flex-col mt-8 md:mr-10 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 z-60 pl-[10%] md:pl-0 z-70" 
+            class="flex-col mt-8 md:mr-10 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 z-60 pl-[10%] md:pl-0 z-70" :style="{ color: navbarTextColor }"
             >
-            <a @click="toggleNav" href="#About" class=" hover:text-indigo-400" :style="{ color: navbarTextColor }">
+            <a @click="toggleNav" href="#About" class=" hover:text-indigo-400" >
                 About
             </a>
-            <a @click="toggleNav" href="#Works" class=" hover:text-indigo-400" :style="{ color: navbarTextColor }">
+            <a @click="toggleNav" href="#Works" class=" hover:text-indigo-400" >
                 Works
             </a>
-            <a @click="toggleNav" href="#Contact" class=" hover:text-indigo-400" :style="{ color: navbarTextColor }">
+            <a @click="toggleNav" href="#Contact" class=" hover:text-indigo-400">
                 Contact
             </a>
             </div>
@@ -109,11 +117,11 @@ cursor: pointer;
 span {
 display: block;
 width: 100%;
-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
 border-radius: 2px;
 height: 3px;
 transition: all 0.3s;
 position: relative;
+background: #fff;
 }
 
 span + span {

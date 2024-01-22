@@ -42,7 +42,6 @@ onMounted(() => {
 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', handleWindowResize);
-    window.addEventListener('scroll', handleScroll);
 
 });
 
