@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/core": "^10.7.2",
+    "@vueuse/motion": "^2.0.0",
     "aos": "^3.0.0-beta.6",
     "autoprefixer": "^10.4.16",
     "flowbite": "^2.2.1",
@@ -16,7 +18,9 @@
     "tailwindcss": "^3.4.0",
     "taos": "^1.0.5",
     "typed.js": "^2.1.0",
+    "vanilla-tilt": "^1.8.1",
     "vue": "^3.3.11",
+    "vue-tilt.js": "^1.1.1",
     "vue-typed-js": "^0.1.2"
   },
   "devDependencies": {
