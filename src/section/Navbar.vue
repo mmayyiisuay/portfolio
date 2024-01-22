@@ -48,8 +48,6 @@ function handleScroll() {
     <div class="sticky top-0 z-50 ≈" @scroll="handleScroll" >
         <div
         class="absolute w-full flex justify-center backdrop-blur-md "
-        
-       
     >
         <nav
         class="container px-6 py-8 md:flex md:justify-between md:items-center w-screen"
@@ -59,7 +57,7 @@ function handleScroll() {
             to="/"
             class="text-xl font-bold  md:text-xl lg:ml-10 sub"
             :style="{ color: navbarTextColor }"
-            >&lt; Natcha/ &gt;
+            >&lt; Natcha kub/ &gt;
             </div>
             <div @click="toggleNav" class="md:hidden">
             <button ref="btn" class="btn not-active">
