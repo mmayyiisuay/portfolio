@@ -70,7 +70,7 @@ const works = ref(worksData.worksData);
 </script>
 <template>
     <div class="flex z-0 justify-around mt-10 " id="Works">
-        <div class="wrap w-[40vw] text-[40px] sm:text-[30px] md:text-[36px] text-ssm my-10 ml-[10px]">
+        <div class="wrap w-[40vw] text-[40px] sm:text-[30px] md:text-[36px] my-10 ml-[10px]">
             <div class="w-[100vw] font-bold uppercase ">
                 <div class="text-blue-400 overflow-hidden inline-block w-[10vw]">
                     <div class="left-content">
@@ -155,7 +155,7 @@ const works = ref(worksData.worksData);
     <div class="grid grid-crad md:grid-cols-2 lg:grid-cols-3 md:gap-x-4 gap-y-4 py-10 md:px-28 bg-gradient-to-tr from-[#4F53B9] to-[#ACD8F8]">
         <div v-motion-fade-visible  v-for="project in works" :key="project.name" class="flex justify-center target" >
             <Tilt class="flex justify-center" :max="10" :cls="'your-custom-class'" :perspective="900" :reverse="false">
-                <div  class="bg-sky-100 w-[70%] md:w-full max-h-[500px] rounded-[3vw] flex flex-col items-center  py-8 p-4 bg-css  shadow-box hover:scale-95" >
+                <a  class=" bg-sky-100 w-[70%] md:w-full max-h-[500px] rounded-[3vw] flex flex-col items-center  py-8 p-4 bg-css  shadow-box hover:scale-95 " target="_blank" :href="project.linkweb" >
         
                     <img :src="getProjectImage(project.src)" alt="" class="h-[35%] rounded-[2vw] " />
                     
@@ -195,8 +195,9 @@ const works = ref(worksData.worksData);
                             </div>
                         </div>
                     </div>
-        
-                </div>
+                    
+                </a>
+                
             </Tilt>
         </div>
     </div>
@@ -277,7 +278,9 @@ span {
     .no-ma {
         margin-left: 10px;
     }
-    
+    .text-eff{
+        font-size: 40px;
+    }
 }
 @media (max-width: 450px) {
     .icon-size{
@@ -288,7 +291,7 @@ span {
         padding-right: 20px;
     }
     .text-eff{
-        font-size: 24px;
+        font-size: 40px;
     }
     
 }
@@ -304,7 +307,7 @@ span {
         width: 90%;
     }
     .text-eff{
-        font-size: 24px;
+        font-size: 40px;
     }
     
 }
