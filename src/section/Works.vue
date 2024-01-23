@@ -69,7 +69,7 @@ function getProjectImage(src) {
 const works = ref(worksData.worksData);
 </script>
 <template>
-    <div class="flex z-0 justify-around mt-10" id="Works">
+    <div class="flex z-0 justify-around mt-10 " id="Works">
         <div class="wrap w-[40vw] text-[40px] sm:text-[30px] md:text-[36px] text-ssm my-10 ml-[10px]">
             <div class="w-[100vw] font-bold uppercase ">
                 <div class="text-blue-400 overflow-hidden inline-block w-[10vw]">
