@@ -127,7 +127,7 @@ const works = ref(worksData.worksData);
         </div>
         
     </div>
-    <div  class="py-10 px-20 pad md:px-32 lg:pl-52  flex flex-col justify-center  bg-gradient-to-tr from-[#b7d7f7] from-5% via-transparent via-55% to-transparent to-100%">
+    <div  class="py-10 pb-32 px-20 pad md:px-32 lg:pl-52  flex flex-col justify-center  bg-gradient-to-tr from-[#b7d7f7] from-5% via-transparent via-55% to-transparent to-100%">
         <div class="flex flex-col-reverse  md:flex-row ">
             <hr class="w-full h-px md:my-16  bg-gray-300 border-0">
             <div v-motion-slide-visible-right class="md:w-[30%] w-full text-start text-eff no-ma ml-10">
@@ -135,9 +135,9 @@ const works = ref(worksData.worksData);
             </div>
         </div>
         <div v-motion-slide-visible-left class="flex justify-start">
-            <pre class="text-sssm no-ma md:w-[70%] w-full text-wrap md:-mt-10 mt-4 ml-10 ">
+            <div class="text-sssm no-ma md:w-[70%] w-full md:-mt-10 mt-4 ml-10 font-extralight whitespace-pre-wrap">
                 Talking about UX/UI design, whenever I work on a project, whether it's for university or freelance gigs, my team always trusts me with doing UX/UI design. They trust me because I can design stuff, pick colors, and I know Front-end, which helps make the designs turn out well. I've also joined UX/UI workshops and I'm currently studying it at university.
-            </pre>
+            </div>
         </div>
         <div class="flex flex-col-reverse  md:flex-row">
             <hr class="w-full h-px  md:my-16  bg-gray-300 border-0 ">
@@ -146,18 +146,18 @@ const works = ref(worksData.worksData);
             </div>
         </div>
         <div v-motion-slide-visible-left class="flex justify-start">
-            <pre class="text-sssm no-ma md:w-[70%] w-full text-wrap md:-mt-10 mt-4 ml-10">
+            <div class="text-sssm no-ma md:w-[70%] w-full font-extralight md:-mt-10 mt-4 ml-10 whitespace-pre-wrap">
                 After doing UX/UI design, I got interested in Front-end to make the actual designs work. So, I started practicing and working on more projects, including freelance jobs. I began with React and later tried Vue. I enjoy taking on new challenges in Front-end work.
-            </pre>
+            </div>
         </div>
     </div>
 
     <div class="grid grid-crad md:grid-cols-2 lg:grid-cols-3 md:gap-x-4 gap-y-4 py-10 md:px-28 bg-gradient-to-tr from-[#4F53B9] to-[#ACD8F8]">
         <div v-motion-fade-visible  v-for="project in works" :key="project.name" class="flex justify-center target" >
-            <Tilt class="flex justify-center" :max="30" :cls="'your-custom-class'" :perspective="900" :reverse="false">
-                <div  class="bg-sky-100 w-[70%] md:w-full h-full rounded-[3vw] flex flex-col items-center  py-8 p-4 bg-css  shadow-box hover:scale-95" >
+            <Tilt class="flex justify-center" :max="10" :cls="'your-custom-class'" :perspective="900" :reverse="false">
+                <div  class="bg-sky-100 w-[70%] md:w-full max-h-[500px] rounded-[3vw] flex flex-col items-center  py-8 p-4 bg-css  shadow-box hover:scale-95" >
         
-                    <img :src="getProjectImage(project.src)" alt="" class="h-[35%]  rounded-[2vw] " />
+                    <img :src="getProjectImage(project.src)" alt="" class="h-[35%] rounded-[2vw] " />
                     
                     <div class="h-full flex flex-col items-start text-[14px]">
                         <div class="flex justify-between w-full  mt-10  mb-4 w-role">
